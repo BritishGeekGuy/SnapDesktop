@@ -1,0 +1,64 @@
+{
+  "name": "snapdesktop",
+  "version": "6.9.2",
+  "description": "Snap! Desktop is a unofficial Electron App made for Snap! (Trademark of Berkeley University)",
+  "main": "index.js",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "electron": "^16.0.2"
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BritishGeekGuy/SnapDesktop.git"
+  },
+  "keywords": [
+    "Snap!",
+    "SnapDesktop",
+    "Snap!Desktop"
+  ],
+  "author": "BritishGeekGuy",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/BritishGeekGuy/SnapDesktop/issues"
+  },
+  "homepage": "https://github.com/BritishGeekGuy/SnapDesktop#readme",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "snapdesktop"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
